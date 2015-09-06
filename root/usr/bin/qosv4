@@ -73,7 +73,7 @@ $IPM -N QOSDOWN
 $IPM -N QOSUP
 
 
-wan_list=$(uci show -P /var/state/ nwan |grep uptime= |cut -d"." -f2 | cut -d"." -f1) 
+wan_list=$(uci show -P /var/state/ nwan |grep gateway= |cut -d"." -f2 | cut -d"." -f1) 
 [ "$log_record" = "5" ]&&echo wan list : $wan_list >> $logpath
 for ifc in $wan_list; 
 do
